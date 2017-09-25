@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 # 
 parser = ArgumentParser(description='WS281x Led-strip display manager.')
 parser.add_argument('--buffer', '-b', nargs='?', default=16, help= "The receive buffer size (in bytes)", type=int)
-parser.add_argument('--socket', '-s', nargs='?', default="/tmp/python-socket", help= "The path to the socket")
+parser.add_argument('--socket', '-s', nargs='?', default="/tmp/display-server-socket", help= "The path to the socket")
 parser.add_argument('--dump', '-d', nargs='?', default=False, help= "Just print the incoming message on stdout ")
 args = parser.parse_args() 
 

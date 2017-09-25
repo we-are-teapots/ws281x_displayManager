@@ -7,11 +7,9 @@ from sys import exit as die
 def auto_int(x):
     return int(x, 0)
 
-parser = argparse.ArgumentParser(description='Send an UDP message.')
+parser = argparse.ArgumentParser(description='Send an test message to an ws_2811 led strip display server.')
 
-parser.add_argument('--socket', '-s', nargs='?', default='/tmp/python-socket') 
-# parser.add_argument('--address', '-a', nargs='?', default='127.0.0.1')
-# parser.add_argument('--port', '-p', nargs='?', default=5005, type=int)
+parser.add_argument('--socket', '-s', nargs='?', default='/tmp/display-server-socket') 
 t = time.time()
 parser.add_argument('message', nargs='*', default=[a*256/16 for a in range(16)], type=auto_int)
 args = parser.parse_args()

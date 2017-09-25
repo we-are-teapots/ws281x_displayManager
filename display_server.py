@@ -62,7 +62,7 @@ sock = socket.socket(socket.AF_UNIX,
 
 sock.bind(path)
 
-print "POV DISPLAY SERVER\nListening in SOCKET {}".format(path)
+print "WS_2811 led strip display server\nListening on SOCKET {}".format(path)
 
 print "Stream format: {}".format(streamFormat)
 

@@ -10,12 +10,6 @@ Author: Tony DiCola (tony@tonydicola.com)
 Based on rpi_ws281x library by Jeremy Garff
 Copyright (c) 2014 Jeremy Garff <jer @ jers.net>
 
-```diff
-- ############# WORK IN PROGESS ###################
-```
-
-
-
 ## Installation:
 
 Make sure you have `scons` and `swig` installed, or (on a debian based system)
@@ -59,5 +53,35 @@ rm -rf ./build
 
 
 ## Usage:
+_instructions to test it on a Raspberry Pi 3_
 
-- TODO :)
+- Power your led strip and connect the data pin to your GPIO pin 18. If you wish you can configure the GPIO pin and other parameters inside `ws_2811_conf.py`.
+
+- Run the display server with administrator privileges:
+
+```bash
+sudo python display_server.py
+``` 
+
+- Send a test message to the display server:
+
+```bash
+sudo python socket_send_test.py
+
+```
+(you should see a blue gradient on the leds)
+
+
+- Now you can send messages the UNIX socket: `/tmp/display-server-socket`, with the format: `'<IIIIIIIIIIIIIIII'` where each of the integers correspond to the 32bits rgb value of each led on a 16 leds strip. 
+
+The server can also be initialized to manage a different amount of leds:
+
+```bash
+sudo python display_server.py -b [NUMBER_OF_LEDS]
+```
+
+or to use a different Socket file:
+
+```bash
+sudo python display_server.py -s [PATH_TO_SOCKET]
+```
