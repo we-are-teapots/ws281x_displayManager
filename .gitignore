@@ -1,0 +1,10 @@
+*.pyc
+*.pdf
+*.png
+*.jpg
+Logic*
+Schema*
+lib/rpi_ws281x
+*.sublime*
+*update*
+*.pyc
